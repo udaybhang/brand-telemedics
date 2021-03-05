@@ -7,7 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './login/admin-login.component';
@@ -26,8 +26,8 @@ import { AnonGaurd } from './utility/anon-gaurd';
     RoleLoginComponent,
     NotFoundComponent,
     PractitionerListComponent,
-    PractitionerContainerComponent
-    // SidebarComponent
+    PractitionerContainerComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

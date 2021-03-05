@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -10,6 +10,13 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    $(document).ready(function(){
+      $(".sideMenuToggler").on("click", function() {
+          $(".wrapper").toggleClass("active");
+        });
+      
+      });
+
   }
 
 }
