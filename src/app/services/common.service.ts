@@ -5,6 +5,12 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CommonService {
+  logoutUser() {
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    this.navigateToLogin();
+  }
   user: any = {};
   constructor(private router: Router) { }
   navigateToError() {
@@ -40,7 +46,8 @@ export class CommonService {
    
     const cIdentifier = localStorage.getItem("Identifier");
     if (cIdentifier) {
-      this.router.navigate([cIdentifier + "/login"]);
+      this.router.navigate([cIdentifier + "/login"])
+      
     } else {
       this.router.navigate(["/admin"]);
     }

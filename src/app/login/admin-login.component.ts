@@ -32,7 +32,7 @@ export class AdminLoginComponent implements OnInit {
      model.ClinicIdentifier = "admin";
      this.auth.login(model).subscribe(res=> {
        this.roleLoginRes = res;
-       if (this.roleLoginRes.data.accessToken != null) {
+       if (this.roleLoginRes.data !== null) {
        
           this.common.setCurrentUser(
             this.roleLoginRes.data.userInfo,
