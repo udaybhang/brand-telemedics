@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { CommonService } from '../services/common.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,7 +8,11 @@ import * as $ from 'jquery';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private common: CommonService) { }
+
+  logout() {
+    this.common.logoutUser();
+  }
 
   ngOnInit(): void {
     $(document).ready(function(){
