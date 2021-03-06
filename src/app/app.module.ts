@@ -19,6 +19,7 @@ import { AuthGaurd } from './gaurds/auth-gaurd';
 import { AnonGaurd } from './utility/anon-gaurd';
 import { ClinicComponent } from './clinic-admin/clinic.component';
 import { ClinicAdminComponent } from './clinic-admin/clinic/clinic-admin.component';
+import { DemoMaterialModule } from './material-module';
 // import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
@@ -39,10 +40,13 @@ import { ClinicAdminComponent } from './clinic-admin/clinic/clinic-admin.compone
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
+    DemoMaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot()
     // MatSliderModule
+  ],
+  exports: [
   ],
   providers: [AuthGaurd, AnonGaurd],
   bootstrap: [AppComponent]
