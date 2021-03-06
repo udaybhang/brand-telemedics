@@ -18,6 +18,7 @@ export class AdminLoginComponent implements OnInit {
   returnUrl: any;
   constructor(private formBuilder: FormBuilder, 
     private common: CommonService, private auth: AuthService, private flashMessage: FlashMessagesService) { 
+      alert()
     }
   
 
