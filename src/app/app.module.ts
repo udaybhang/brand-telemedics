@@ -17,6 +17,8 @@ import { PractitionerListComponent } from './practitioner/practitioner-list.comp
 import { PractitionerContainerComponent } from './practitioner/container/practitioner-container.component';
 import { AuthGaurd } from './gaurds/auth-gaurd';
 import { AnonGaurd } from './utility/anon-gaurd';
+import { ClinicComponent } from './clinic-admin/clinic.component';
+import { ClinicAdminComponent } from './clinic-admin/clinic/clinic-admin.component';
 // import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AnonGaurd } from './utility/anon-gaurd';
     NotFoundComponent,
     PractitionerListComponent,
     PractitionerContainerComponent,
-    SidebarComponent
+    SidebarComponent,
+    ClinicComponent,
+    ClinicAdminComponent
   ],
   imports: [
     BrowserModule,

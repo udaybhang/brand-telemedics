@@ -31,6 +31,7 @@ export class RoleLoginComponent implements OnInit {
      model.ClinicIdentifier = this.identifierid ? this.identifierid : "";
      this.auth.login(model).subscribe(res=> {
        this.roleLoginRes = res;
+       console.log('this.roleLoginRes.data.userInfo.userType', this.roleLoginRes.data.userInfo.userType)
        if (this.roleLoginRes.data.accessToken != null) {
         if (this.roleLoginRes.data.userInfo.userType == 2 || this.roleLoginRes.data.userInfo.userType == 3) {
           this.common.setCurrentUser(
