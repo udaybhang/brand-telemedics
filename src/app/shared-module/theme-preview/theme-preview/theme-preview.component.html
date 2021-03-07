@@ -1,0 +1,143 @@
+<div
+  class="view-full-wrraper"
+  [style.background-color]="previewTheme.contentBgColor"
+>
+  <div
+    class="view-side-bar"
+    [style.background-color]="previewTheme.sidebarBgColor"
+  >
+    <div class="logo-top">
+      <div class="sidelogo logo">
+        <img
+          alt=""
+          [src]="
+            previewTheme.logoImgPath
+              ? previewTheme.logoImgPath
+              : 'superAdminLogo'
+          "
+        />
+      </div>
+      <div class="view-sidebar-left-panel">
+        <ul class="an-main-nav">
+          <li class="an-nav-item">
+            <a class="js-show-child-nav active">
+              <i class="fa fa-hospital-o"></i>
+              <span class="nav-title">Meetings</span>
+            </a>
+          </li>
+          <li class="an-nav-item">
+            <a class="js-show-child-nav">
+              <i class="fa fa-user-md"></i>
+              <span class="nav-title">Visit Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="view-main-content">
+    <div
+      class="view-main-header"
+      [style.background-color]="previewTheme.headerBgColor"
+    >
+      <h4 class="clinicname view-main-clinicname">
+        {{ previewTheme.clinicName ? previewTheme.clinicName : "Clinic Name" }}
+      </h4>
+      <p>User Name</p>
+    </div>
+    <div class="view-inner-content">
+      <div class="view-table-outer">
+        <table>
+          <thead>
+            <tr>
+              <th [style.background-color]="previewTheme.sidebarBgColor">
+                Patient Name
+              </th>
+              <th [style.background-color]="previewTheme.sidebarBgColor">
+                Created On
+              </th>
+              <th [style.background-color]="previewTheme.sidebarBgColor">
+                Status
+              </th>
+              <th [style.background-color]="previewTheme.sidebarBgColor">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Amjad</td>
+              <td>Jul 14, 2020, 12:02:46 AM</td>
+              <td>Chief Sandwich Eater</td>
+              <td class="btn-td">
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="mx-2 btn-save btn-primary btn-sm view-btn-primary"
+                  [style.background-color]="previewTheme.primaryBtnColor"
+                >
+                  Primary
+                </button>
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="mx-2 btn-save btn-primary btn-sm view-btn-primary"
+                  [style.background-color]="previewTheme.secondaryBtnColor"
+                >
+                  secondary
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Amjad</td>
+              <td>Jul 14, 2020, 12:02:46 AM</td>
+              <td>Chief Sandwich Eater</td>
+              <td class="btn-td">
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="mx-2 btn-save btn-primary btn-sm view-btn-primary"
+                  [style.background-color]="previewTheme.primaryBtnColor"
+                >
+                  Primary
+                </button>
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="mx-2 btn-save btn-primary btn-sm view-btn-primary"
+                  [style.background-color]="previewTheme.secondaryBtnColor"
+                >
+                  secondary
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Amjad</td>
+              <td>Jul 14, 2020, 12:02:46 AM</td>
+              <td>Chief Sandwich Eater</td>
+              <td class="btn-td">
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="mx-2 btn-save btn-primary btn-sm view-btn-primary"
+                  [style.background-color]="previewTheme.primaryBtnColor"
+                >
+                  Primary
+                </button>
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="mx-2 btn-save btn-primary btn-sm view-btn-primary"
+                  [style.background-color]="previewTheme.secondaryBtnColor"
+                >
+                  secondary
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

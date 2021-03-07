@@ -1,0 +1,29 @@
+<div [ngClass]="{'publishing': publishing}" #publisherDiv class="mb-3">
+    
+    <div class="video-button">
+      <!-- <button mat-raised-button color="accent" (click)="toggleVideo(isVideo)" [disabled]="isVideoBtn" class="text-uppercase mat-raised-button ml-2">
+      <span class="material-icons" *ngIf="isVideo" style="color:#fff" title="Click to pause video">
+          videocam
+          </span>
+          <span class="material-icons" *ngIf="!isVideo" style="color:#fff" title="Click to start video">
+              videocam_off
+              </span>
+     </button>
+
+     <button mat-raised-button color="accent" (click)="toggleAudio()" class="text-uppercase mat-raised-button ml-2">
+      <span *ngIf="isAudio" class="material-icons" style="color:#fff" title="Click to pause audio">
+          mic
+          </span>
+          <span *ngIf="!isAudio" class="material-icons"  style="color:#fff" title="Click to start audio">
+              mic_off
+              </span>
+     </button> -->
+     <span style="color:white;margin-left: 20px;">{{userName}}</span>
+       <!-- <button *ngIf="isLoggedin" mat-raised-button color="warn" [disabled]="isVideoBtn" (click)="endCall()" class="text-uppercase mat-raised-button ml-2"><span class="material-icons" style="color:#fff" title="Click to end video call">
+          call_end
+          </span></button> -->
+           
+    </div>
+   <!-- {{ isVideo ? 'Video Off' : 'Video On' }}  -->
+  </div>
+  

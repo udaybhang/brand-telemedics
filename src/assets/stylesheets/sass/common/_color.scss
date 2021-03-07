@@ -1,0 +1,34 @@
+$themeName:vx;
+//$themeName:websia;
+
+$color-primary: #4680ff;
+$color-secondary: #555555;
+$color-white: #fff;
+$color-black: #000000;
+
+// font color
+$color-font-primary: #1c4387;
+$color-font-two: #1c4387;
+
+// btn
+$btn-color-blue: #4680ff;
+$btn-color-blue-hover: #1c4387;
+$color-gray-disabled: #7c7c7c;
+
+@if $themeName == websia {
+    $color-primary: #981b1e;
+    $color-secondary: #444444;
+    $color-white: #fff;
+    $color-black: #000000;
+    
+    // font color
+    $color-font-primary: #981b1e;
+    $color-font-two: #fcfcfc;
+    
+    // btn
+    $btn-color-blue: #981b1e;
+    $btn-color-blue-hover: #444444;
+    $color-gray-disabled: #7c7c7c;
+} 
+
+

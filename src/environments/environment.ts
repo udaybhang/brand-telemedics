@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-    apiUrl: "https://api-vx-stg.telemedicx.com/"
+    apiUrl: "https://api-vx-stg.telemedicx.com/",
+    client:"default"
 };
 
 /*

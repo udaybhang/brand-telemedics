@@ -1,0 +1,8 @@
+::ng-deep .mat-menu-panel {
+    min-height: 45px!important;
+}
+
+.tZoneTxt{
+    color: #000;
+    margin-right: 35px;
+}

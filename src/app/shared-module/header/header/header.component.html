@@ -1,0 +1,55 @@
+<header class="an-header wow fadeInDown theme-header">
+  <div class="an-topbar-left-part">
+    <button
+      id="sidebarToggle"
+      class="an-btn an-btn-icon toggle-button js-toggle-sidebar"
+      (click)="openSidebar()"
+      mat-button
+    >
+      <i
+        class="fa fa-bars"
+        aria-hidden="true"
+        style="font-size: 30px; color: white;"
+      ></i>
+    </button>
+  </div>
+
+  <div class="an-topbar-right-part">
+    <mat-menu #notification="matMenu"> </mat-menu>
+
+    <h4 class="clinicname" *ngIf="loggedInUserData?.userType != 1">
+      {{ clinicName }}
+    </h4>
+    <div class="profile-info-rit">
+      <span *ngIf="timeZone" class="tZoneTxt">({{timeZone}})</span>
+      <span class="welcome-top">
+        Welcome {{ loggedInUserData?.userName }}
+      </span>
+      <!-- <div class="user-profile-img">
+      <img src="{{baseUrl}}{{photopath}}" >
+    </div> -->
+      <button mat-button [matMenuTriggerFor]="menu" class="top-user-menu">
+        <!-- <div class="top-user" *ngIf="Isphoto">
+          <img src="{{ baseUrl }}{{ photopath }}" alt="" />
+        </div> -->
+        <div class="top-user-caret">
+          <i
+            class="fa fa-angle-down"
+            aria-hidden="true"
+            style="font-size: 30px; color: black;"
+          ></i>
+        </div>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button *ngIf="isUserPractitioner" [routerLink]="['/practitioner/profile']" mat-menu-item >{{'PROFILE' | translate}}</button>
+        <button mat-menu-item (click)="setLanguage('pt-BR')">Português</button>
+        <button mat-menu-item (click)="setLanguage('en-US')">English</button>
+        <button mat-menu-item (click)="logoutUser()">{{'LOGOUT' | translate}}</button>
+        <!-- test -->
+      </mat-menu>
+      <!-- end .AN-PROFILE-SETTINGS -->
+    </div>
+  </div>
+  <!-- end .AN-TOPBAR-RIGHT-PART -->
+</header>

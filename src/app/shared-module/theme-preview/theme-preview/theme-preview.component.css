@@ -1,0 +1,115 @@
+/* -----------view-display-css -------------------------------*/
+.view-full-wrraper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.view-main-content {
+  width: calc(100% - 150px);
+}
+.view-side-bar {
+  width: 150px;
+  background: #ccc;
+  min-height: 500px;
+}
+.view-main-header {
+  display: flex;
+  background: #1c4387;
+  height: 60px;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+}
+.view-side-bar .sidelogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.view-side-bar .sidelogo img {
+  height: 39px;
+  border-radius: 10px;
+  /* width: 39px; */
+}
+.view-side-bar ul.an-main-nav {
+  padding-right: 15px;
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+.view-side-bar a.js-show-child-nav {
+  padding: 7px 15px;
+  border-radius: 0 20px 20px 0;
+  color: #fff;
+  width: 100%;
+  display: block;
+}
+.view-side-bar a.js-show-child-nav.active {
+  background: #fff;
+  color: #000;
+}
+.view-side-bar a.js-show-child-nav i {
+  margin-right: 5px;
+}
+.view-side-bar li.an-nav-item {
+  margin: 15px 0;
+}
+h4.clinicname.view-main-clinicname {
+  margin: 0;
+  font-size: 18px;
+}
+.view-main-header p {
+  color: #fff;
+  margin: 0;
+}
+.view-inner-content {
+  padding: 15px;
+}
+.view-table-outer th {
+  color: #fff;
+  font-weight: normal;
+  padding: 7px;
+  white-space: nowrap;
+}
+.view-table-outer td {
+  padding: 7px;
+  border-bottom: solid 1px #dbe9ff;
+}
+.view-table-outer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0px auto;
+  font-size: 12px;
+}
+.btn-td {
+  display: flex;
+}
+
+.view-table-outer {
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+.view-table-outer button.view-btn-primary {
+  padding: 0px 15px;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.view-full-wrraper .logo {
+  width: 80%;
+  border-radius: 0.3125rem;
+  padding: 0.25rem;
+  height: auto;
+  margin-top: 14px;
+  margin-left: 10px;
+  border-radius: 50% !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-full-wrraper .logo img {
+  background-color: #444;
+  border: 1px solid #444;
+}

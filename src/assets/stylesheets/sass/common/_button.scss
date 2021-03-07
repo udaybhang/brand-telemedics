@@ -1,0 +1,87 @@
+.btn-google {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-family: "Circular-Std";
+  font-family: "Circular-Std-Book";
+  font-style: 500;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  height: 50px;
+  display: block;
+  text-align: center;
+  color: #1c4387;
+  border: 0;
+  width: 100%;
+  i {
+    margin-right: 10px;
+  }
+}
+.btn-blue {
+  color: #fff;
+  background-color: $btn-color-blue;
+  border-color: $btn-color-blue;
+  &:hover {
+    color: #fff;
+    background-color: $btn-color-blue-hover;
+    border-color: $btn-color-blue-hover;
+  }
+  &:focus,
+  &.focus {
+    color: #fff;
+    background-color: $btn-color-blue-hover;
+    border-color: $btn-color-blue-hover;
+    box-shadow: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: #fff;
+    background-color: $color-gray-disabled;
+    border-color: $color-gray-disabled;
+    cursor: not-allowed;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > .btn-main.dropdown-toggle {
+    color: #fff;
+    background-color: $btn-color-blue-hover;
+    border-color: $btn-color-blue-hover;
+  }
+  &:not(:disabled):not(.disabled):active:focus,
+  &:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-main.dropdown-toggle:focus {
+    box-shadow: none;
+  }
+}
+.btn {
+  &.btn-icon {
+    position: relative;
+    padding-right: 45px;
+    i {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      display: flex;
+      bottom: 0;
+      width: 30px;
+      opacity: 0.5;
+      img {
+        display: inline-block;
+        vertical-align: middle;
+        margin: auto;
+      }
+    }
+    &:hover {
+      i {
+        opacity: 1;
+      }
+    }
+  }
+}
+.link-undeline-bold {
+  color: #1c4387;
+  font-weight: 600;
+  text-decoration: underline;
+}

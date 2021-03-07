@@ -1,0 +1,78 @@
+<div class="an-sidebar-nav js-sidebar-toggle-with-click sidebar_Shadow">
+  <div class="navbar-header theme-header">
+    <a href="javascript:void(0)" class="navbar-brand">
+      <div class="sidelogo" *ngIf="Isphoto && loggedInUserData?.userType != 1">
+        <img src="{{ photopath }}" alt="" />
+      </div>
+      <div class="sidelogo admin-logo" *ngIf="loggedInUserData?.userType == 1"  [style.background-color]="logoBgColor">
+        <img *ngIf="superAdminLogo" src="{{superAdminLogo}}" alt="logo" />
+      </div>
+    </a>
+  </div>
+  <div class="sidebar-left-panel theme-sidebar">
+    <ul class="an-main-nav">
+      <li
+        *ngFor="let item of navigationItems"
+        class="an-nav-item"
+        [routerLink]="['/' + item.routerLink]"
+        [routerLinkActive]="['current', 'active']"
+        [routerLinkActiveOptions]="{ exact: false }"
+      >
+        <a class="js-show-child-nav" title="{{ item.name  | translate }}" mat-button>
+          <i class="fa fa-{{ item.icon }}"></i>
+          <span class="nav-title">{{ item.name | translate}}</span>
+        </a>
+      </li>
+      <li class="an-nav-item" (click)="logoutUser()" >
+      <a class="js-show-child-nav" title="Logout" mat-button>
+        <i class="fa fa-sign-out"></i>
+        <span class="nav-title">{{'LOGOUT' | translate}}</span>
+      </a>
+    </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <mat-drawer-container class="an-sidebar-nav  sidebar_Shadow" autosize>
+  <div class="navbar-header">
+    <a href="#" class="navbar-brand">
+
+        <div class="sidelogo" *ngIf="Isphoto == true && loggedInUserData.userType != 1">
+          <img src="{{baseUrl}}{{photopath}}" alt="" />
+        </div>
+        <div  *ngIf="Isphoto == false || loggedInUserData.userType == 1" >
+          <h4>MutliTenantApp</h4>
+        </div>
+
+    </a>
+    <div class="an-topbar-left-part">
+      <button
+
+        class="navbar-toggle collapsed" (click)="drawer.toggle()"
+        mat-button
+      >
+      <i class="fa fa-bars" aria-hidden="true" style="font-size:30px;color:white;"></i>
+
+      </button>
+    </div>
+  </div>
+  <mat-drawer #drawer class="sidebar-left-panel" mode="side">
+
+    <ul class="an-main-nav">
+      <li
+        *ngFor="let item of navigationItems"
+        class="an-nav-item"
+        [routerLink]="['/' + item.routerLink]"
+        [routerLinkActive]="['current', 'active']"
+      >
+        <a class="js-show-child-nav waves-effect" title="{{ item.name }}" mat-button>
+          <i class="fa fa-list"></i>
+          <span class="nav-title">{{ item.name }}</span>
+        </a>
+      </li>
+    </ul>
+  </mat-drawer>
+
+
+
+</mat-drawer-container> -->

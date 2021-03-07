@@ -1,0 +1,72 @@
+.mrg-b-42 {
+    margin-bottom: 25px;
+
+    @include breakpoint(xl) {
+        margin-bottom: 42px;
+    }
+}
+.mb-30 {
+    margin-bottom: 15px;
+    @include breakpoint(xl) {
+        margin-bottom: 30px;
+    }
+}
+.box-shadow {
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.modal-title {
+    font-family: 'Circular-Std';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: #1c4387;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.thank-you-massage {
+    text-align: center;
+    font-family: 'Circular-Std';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 33px;
+    color: #485c8c;
+    h1 {
+        font-family: 'Circular-Std-Book';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 33px;
+    }
+    h2 {
+        font-family: 'Circular-Std';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+    }
+}
+.group-inputcc {
+    .cc-code {
+        padding-right: 5px;
+        max-width: 140px !important;
+        width: 140px !important;
+    }
+    .cc-code-input {
+        width: calc(100% - 140px) !important;
+        max-width: calc(96% - 140px) !important;
+    }
+}
+.ngx-mat-timepicker {
+    .table {
+        background-color: transparent;
+        border: 0;
+        margin-bottom: 0px;
+        th,
+        td {
+            border-top: 0;
+            padding: 0.75rem !important;
+        }
+    }
+}
