@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PractionerService {
-  public url = environment.apiUrl + "api/v1/practitioner/";
+  public url = environment.apiUrl + "api/practitioner";
   constructor(private http: HttpClient) { }
   getAllPractitionerList() {
     return this.http.get(this.url).pipe();

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FlashMessagesModule } from 'angular2-flash-messages';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +20,8 @@ import { AnonGaurd } from './utility/anon-gaurd';
 import { ClinicComponent } from './clinic-admin/clinic.component';
 import { ClinicAdminComponent } from './clinic-admin/clinic/clinic-admin.component';
 import { DemoMaterialModule } from './material-module';
+import { ForgotPasswordComponent } from './forgot/forgot-password.component';
+import { EmailSentComponent } from './forgot/email-sent/email-sent.component';
 // import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { DemoMaterialModule } from './material-module';
     PractitionerContainerComponent,
     SidebarComponent,
     ClinicComponent,
-    ClinicAdminComponent
+    ClinicAdminComponent,
+    ForgotPasswordComponent,
+    EmailSentComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { DemoMaterialModule } from './material-module';
   ],
   exports: [
   ],
-  providers: [AuthGaurd, AnonGaurd],
+  providers: [AuthGaurd, AnonGaurd
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

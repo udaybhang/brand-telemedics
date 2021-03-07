@@ -5,6 +5,10 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CommonService {
+  navigateToemailReset() {
+    this.router.navigate(["404-not-found"]);  
+  }
+  
   logoutUser() {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("accessToken");
