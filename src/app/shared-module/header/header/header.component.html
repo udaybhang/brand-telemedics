@@ -17,14 +17,17 @@
   <div class="an-topbar-right-part">
     <mat-menu #notification="matMenu"> </mat-menu>
 
-    <h4 class="clinicname" *ngIf="loggedInUserData?.userType != 1">
+    <!-- <h4 class="clinicname" *ngIf="loggedInUserData?.userType != 1">
       {{ clinicName }}
-    </h4>
-    <div class="profile-info-rit">
-      <span *ngIf="timeZone" class="tZoneTxt">({{timeZone}})</span>
+    </h4> -->
+    <div class="profile-info-rit ">
+      <!-- <span *ngIf="timeZone" class="tZoneTxt">({{timeZone}})</span> -->
+      <div class="admin_drop">
+      <img src="../../../../assets/images/Image 2.png" class="admin_m">
       <span class="welcome-top">
         Welcome {{ loggedInUserData?.userName }}
       </span>
+      </div>
       <!-- <div class="user-profile-img">
       <img src="{{baseUrl}}{{photopath}}" >
     </div> -->

@@ -6,3 +6,31 @@
     color: #000;
     margin-right: 35px;
 }
+.an-header {
+    position: fixed;
+    width: calc(100% - 220px);
+    padding: 0;
+    transition: .3s;
+    margin-left: 220px;
+    z-index: 10000;
+    display: flex!important;
+    min-height: 61px;
+    height: 29px;
+    top: 0;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #F5F5F5;
+}
+
+.an-topbar-right-part{
+    width: 100%;
+    text-align: right;
+}
+.admin_m{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+}
+.admin_drop{
+    margin-top: 10px;
+    margin-right: 20px;
+  }

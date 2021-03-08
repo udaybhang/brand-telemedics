@@ -37,3 +37,51 @@
 .example-sidenav {
   padding: 20px;
 }
+.sidelogo img{
+    padding-left: 15px;
+    width: 42px;
+    height: 22px;
+}
+.an-sidebar-nav {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  transition: width .3s cubic-bezier(0,0,.2,1);
+  transform: translateZ(0);
+  width: 220px;
+  background-color: #FAFBFD;
+  height: 100vh;
+}
+
+/* .an-sidebar-nav .sidebar-left-panel {
+  box-shadow: none;
+  background: #4680ff;
+  margin-top: -1px;
+  width: 60px;
+} */
+ul.an-main-nav {
+  list-style: none;
+  padding-left: 0;
+}
+ul.an-main-nav li{
+  padding-left: 30px;
+  margin: 10px 15px;
+}
+.an-nav-item:hover, .an-nav-item:hover a{
+   border-radius: 12px;
+   background: #0063FF 0% 0% no-repeat padding-box;
+   box-shadow: 0px 0px 32px #00000029;
+   border-radius: 8px;
+   color: #fff;
+   text-decoration: none;
+}
+.clinic_nm{
+  font-size: 12px;
+  margin-left: 10px;
+  color: black;
+}
+.an-sidebar-nav .navbar-header {
+  background: white;
+  padding: 10px;
+  border-right: 1px solid #e8e8e8;
+}

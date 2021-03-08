@@ -2,7 +2,8 @@
   <div class="navbar-header theme-header">
     <a href="javascript:void(0)" class="navbar-brand">
       <div class="sidelogo" *ngIf="Isphoto && loggedInUserData?.userType != 1">
-        <img src="{{ photopath }}" alt="" />
+        <img src="{{ photopath }}" alt="" /><span class="clinic_nm">Pirates of HealthCare</span>
+        
       </div>
       <div class="sidelogo admin-logo" *ngIf="loggedInUserData?.userType == 1"  [style.background-color]="logoBgColor">
         <img *ngIf="superAdminLogo" src="{{superAdminLogo}}" alt="logo" />
