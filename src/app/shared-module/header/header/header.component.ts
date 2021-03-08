@@ -12,9 +12,9 @@ import { StaticHelper } from "../../static-helper/static-helpers";
 })
 export class HeaderComponent implements OnInit {
   loggedInUserData: any;
-  clinicName: string;
+  clinicName!: string;
   isUserPractitioner:boolean;
-  timeZone:string = StaticHelper.timeZoneAbbreviated();
+  timeZone:any = StaticHelper.timeZoneAbbreviated();
   constructor(
     private commonService: CommonService,
     public toogleservice: toogleSidebar,

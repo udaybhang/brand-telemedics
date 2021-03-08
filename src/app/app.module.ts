@@ -16,15 +16,15 @@ import { AuthInterceptor } from "./Services/auth/auth.interceptor";
 import { LoginContainerComponent } from './applicationModules/login-module/login-container.component';
 import { LoginComponent } from './applicationModules/login-module/login/login.component';
  import { NotFoundComponent } from './not-found/not-found.component';
- import { PractitionerListComponent } from './practitioner/practitioner-list.component';
- import { PractitionerContainerComponent } from './practitioner/container/practitioner-container.component';
 
 import { NgxMatMomentModule } from "@angular-material-components/moment-adapter";
+import {MatMenuModule} from '@angular/material/menu';
 import {
   NgxMatDatetimePickerModule,
   NgxMatTimepickerModule,
   NgxMatNativeDateModule,
 } from "@angular-material-components/datetime-picker";
+import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 
 import {
   MatMomentDateModule,
@@ -48,8 +48,12 @@ import { MomentModule } from 'angular2-moment';
 import { SetTimoutSignalService } from "./Services/data-exchange/set-timeout-signal";
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { ClinicComponent } from "./clinic-admin/clinic.component";
-import { ClinicAdminComponent } from "./clinic-admin/clinic/clinic-admin.component";
+import { MatTableModule } from '@angular/material/table'
+import { PractitionerContainerComponent } from "./applicationModules/admin-module/modules/practitioner/practitioner-container.component";
+import { PractitionerListComponent } from "./applicationModules/admin-module/modules/practitioner/practitioner-list/practitioner-list.component";
+import { SidebarComponent } from "./shared-module/sidebar/sidebar/sidebar.component";
+import { HeaderComponent } from "./shared-module/header/header/header.component";
+import { toogleSidebar } from "./Services/toogle/toogle-service";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -58,13 +62,14 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent,
     LoginContainerComponent,
     LoginComponent,
-    NotFoundComponent,
-    PractitionerListComponent,
     PractitionerContainerComponent,
-    ClinicComponent , 
-    ClinicAdminComponent
+    PractitionerListComponent,
+    SidebarComponent,
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -74,6 +79,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     BrowserAnimationsModule,
     NgxMatDrpModule,
+    MatTableModule,
+    MatMenuModule,
+    NgxMatColorPickerModule,
     //  NgxMatSelectSearchModule,
     //FileDropModule,
     NgxMatMomentModule,
@@ -106,6 +114,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   })
   ],
   providers: [
+    toogleSidebar,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
@@ -116,6 +125,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
       useValue: { useUtc: true },
     },
+    { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS },
     DataExchangeService,
     Title,
     SetTimoutSignalService

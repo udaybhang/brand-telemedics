@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { PractitionerContainerComponent } from './applicationModules/admin-module/modules/practitioner/practitioner-container.component';
+import { PractitionerListComponent } from './applicationModules/admin-module/modules/practitioner/practitioner-list/practitioner-list.component';
 import { LoginContainerComponent } from './applicationModules/login-module/login-container.component';
-import { ClinicComponent } from './clinic-admin/clinic.component';
-import { ClinicAdminComponent } from './clinic-admin/clinic/clinic-admin.component';
 import { LoginComponent } from './applicationModules/login-module/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { PractitionerContainerComponent } from './practitioner/container/practitioner-container.component';
-import { PractitionerListComponent } from './practitioner/practitioner-list.component';
+import { SuperAdmin_Admin_AuthGuard } from './shared-module/AuthGurd/roleAuthGuards/superadmin-admin.gaurd';
 import { MMNoAuthGuard } from './shared-module/noAuthGuard/mmno-auth.guard';
 
 const routes: Routes = [
@@ -19,12 +18,17 @@ const routes: Routes = [
   ]
  
 },
-{ path: 'practitioner',  component: PractitionerContainerComponent, children: [
-  { path: '', component: PractitionerListComponent }
-] },
-{ path: 'clinic',  component: ClinicComponent, children: [
-  { path: '', component: ClinicAdminComponent }
-] },
+{
+  path: "practitioner",
+  component: PractitionerContainerComponent,
+  children: [
+    {
+      path: "",
+      canActivate: [SuperAdmin_Admin_AuthGuard],
+      component: PractitionerListComponent,
+    },
+  ],
+},
 { path: '404-not-found', component: NotFoundComponent },
 { path: '**', redirectTo: '404-not-found' },
 ];

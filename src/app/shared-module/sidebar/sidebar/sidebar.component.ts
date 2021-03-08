@@ -14,7 +14,7 @@ import { globalConstanst } from "../../global-constants/global-constants";
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
   navigationItems: NavigationItemModel[] = [];
-  logoBgColor:string;
+  logoBgColor!: string;
   constructor(
     private commonService: CommonService,
     public toogleservice: toogleSidebar
@@ -24,20 +24,24 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   loggedInUserData: any;
   show: boolean = false;
   showFiller: boolean = false;
-  UltimatePackListing: number;
-  FullfillmentListing: number;
+  UltimatePackListing!: number;
+  FullfillmentListing!: number;
   Isphoto: boolean = false;
-  photopath: string;
+  photopath!: string;
   userData: any;
   loggedInUserDetails: any;
   adminData: any;
-  superAdminLogo: string;
+  superAdminLogo!: string;
   ngOnInit() {
     this.loggedInUserData = this.commonService.getCurrentUser();
     const admindetails = this.commonService.getMultitenantDetails();
     if(admindetails != null)
     this.superAdminLogo  = admindetails.superAdminLogo;
-    this.logoBgColor =  this.commonService.getLogoBgColor(admindetails.multitenanttext);
+    console.log('admindetails.multitenanttext==', admindetails?.multitenanttext)
+    if(admindetails != undefined) {
+      this.logoBgColor =  this.commonService.getLogoBgColor(admindetails.multitenanttext);
+    }
+    
     if (this.loggedInUserData) {
       this.Isphoto = true;
       this.photopath = this.loggedInUserData.clinicLogoPathUrl;
@@ -264,16 +268,16 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       $("#dropdown-lvl2").addClass("show");
     });
 
-    if ($(window).width() < 992) {
-      $("body").addClass("collapsedSidebar");
-    }
-    $(window).on("resize", function () {
-      if ($(window).width() < 992) {
-        $("body").addClass("collapsedSidebar");
-      } else {
-        $("body").removeClass("collapsedSidebar");
-      }
-    });
+    // if ($(window).width() < 992) {
+    //   $("body").addClass("collapsedSidebar");
+    // }
+    // $(window).on("resize", function () {
+    //   if ($(window).width() < 992) {
+    //     $("body").addClass("collapsedSidebar");
+    //   } else {
+    //     $("body").removeClass("collapsedSidebar");
+    //   }
+    // });
 
     this.initilizeNavigationItems();
   }

@@ -1,0 +1,63 @@
+@media (max-width: 767px) {
+        
+    .main-wrapper .btn-primary, .main-wrapper .btn-secondary {
+        
+        padding: 0px 10px;
+        font-size: 12px;
+        max-height: 30px;
+        line-height: 24px;
+        
+    }
+    .an-content-body-inner {
+        margin: 0;
+    }
+  }
+  .hidden{
+      display: none;
+  }
+  .modal-body{
+      color: black;
+  }
+
+  @media (min-width: 576px)
+  {
+    .modal-dialog {
+        max-width: 520px;
+        margin: 1.75rem auto;
+    }
+  }
+.previreBox{
+    border: 1px solid black;
+}
+
+
+/* .area-height-outr .area-height {
+    height: auto !important;
+    max-height: 400px !important;
+    min-height: 70px !important;
+  } */
+
+  .borderbox{
+    border: 1px solid #d1d1d1;
+    padding: 5px;
+  }
+  .marglr{
+      margin-left: 15px;
+      margin-right: 15px;
+  }
+
+  h2.main-title {
+    padding: 10px;
+    text-align: center;
+    font-size: x-large;
+}
+.guideEror{
+    margin-left: 20px;
+      color: red;
+      font-size: 15px;
+  }
+
+  .hlText:hover{
+      cursor: pointer;
+      text-decoration: underline;
+  }

@@ -56,7 +56,12 @@ export class CommonService {
 
  isUserInRole(role : string):boolean{
   const roles = this.getRoles();
-  return  roles.includes(role);
+  if(roles != undefined) {
+    return  roles.includes(role);
+  } else {
+    return false;
+  }
+ 
  }
 
   removeCurrentUser() {

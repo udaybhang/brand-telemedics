@@ -29,8 +29,8 @@ export class StaticHelper {
         return phoneNum  ? isdCode + "-" + phoneNum : "";
     }
 
-    static hexToRgbaColor(hex): Color {
-        var c;
+    static hexToRgbaColor(hex:any): Color {
+        var c:any;
         if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
           c = hex.substring(1).split("");
           if (c.length == 3) {
@@ -42,13 +42,13 @@ export class StaticHelper {
     
           const color = new Color((c >> 16) & 255, (c >> 8) & 255, c & 255, 1);
           return color;
-        } else return null;
+        } else return null as any;
       }
 
       static timeZoneAbbreviated = () => {
-     
-        const { 1: tz } = new Date().toString().match(/\((.+)\)/);
-  return tz;
+            
+        const tz = new Date().toString().match(/\((.+)\)/);
+                      return tz;
         // In Chrome browser, new Date().toString() is
         // "Thu Aug 06 2020 16:21:38 GMT+0530 (India Standard Time)"
       
@@ -66,7 +66,7 @@ export class StaticHelper {
       };
 
 
-      static focusToFirstInvalidField(form:FormGroup, el) {
+      static focusToFirstInvalidField(form:FormGroup, el:any) {
      
         for (const key of Object.keys(form.controls)) {
           if (form.controls[key].invalid) {

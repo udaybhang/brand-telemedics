@@ -1,0 +1,265 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="main-wrapper editorbox">
+  <div class="an-page-content">
+    <div class="an-content-body">
+      <div class="an-content-body-inner">
+        <div class="an-body-topbar">
+          <div class="an-page-title">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="row justify-content-between">
+                  <div>
+                   
+                    <h2  class="main-title mb-3 mb-xl-0 hlText">
+                      {{'CUSTOMIZATIONS' | translate}}
+                    </h2>
+                  </div>
+                
+                </div>
+                
+              </div>
+
+             
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid ">
+         
+          <div class="row justify-content-center">
+           
+            <div class="col-lg-12">
+              <div class="box-shadow py-md-5 px-md-4 px-2 py-3">
+
+                <div class="row mb-3">
+          
+                  <div class="col-lg-4 col-md-6">
+                    <mat-form-field appearance="outline">
+                      <mat-label>
+                        {{ 'SELECT_LANGUAGE' | translate }}
+                      </mat-label>
+                      <mat-select
+                                  placeholder="Select Localization Key"
+                                  (selectionChange)="
+                                                    onLocalizationKeyChange(
+                                                        selectedKey
+                                                    )
+                                                "
+                                  [(value)]="selectedKey">
+                        <mat-option
+                                    *ngFor="let template of languageOptions
+                                                    "
+                                    [value]="template.key">
+                          {{ template.name | translate }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+    
+                  </div> 
+              </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6 borderbox marglr">
+                    <h2 class="main-title mb-3 mb-xl-0">
+                      {{ 'EMAIL_TEMPLATES' | translate }}
+                    </h2>
+                 <div class="row">
+                  <div class="col-xl-12">
+                    <mat-form-field appearance="outline">
+                      <mat-label>
+                        {{ 'SELECT_EMAIL_TEMPLATE' | translate }}
+                      </mat-label>
+                      <mat-select
+                                  placeholder="Select Email Template"
+                                  (selectionChange)="
+                                                    onTemplateChange(
+                                                        selectedtemplate
+                                                    )
+                                                "
+                                  [(value)]="selectedtemplate">
+                        <mat-option
+                                    *ngFor="let template of templateTypesDB
+                                                    "
+                                    [value]="template.appKey">
+                          {{ template.appKey | translate }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                  </div>
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-12">
+                        <form
+                              role="form"
+                              #myForm="ngForm"
+                              accept-charset="UTF-8"
+                              novalidate>
+                          <div
+                               class="form-group has-feedback"
+                               [ngClass]="{
+                                                    'has-error':
+                                                        myckeditor.invalid &&
+                                                        myckeditor.touched
+                                                }">
+                            <ckeditor
+                                      [(ngModel)]="content"
+                                      #myckeditor="ngModel"
+                                      name="myckeditor"
+                                      required
+
+                                      [config]="{extraPlugins:'customDropDown'}"
+                                      debounce="500"
+                                      (paste)="onPaste($event)"
+                                      (change)="onChange($event)">
+                            </ckeditor>
+                            <div
+                                 *ngIf="
+                                                        myckeditor.invalid &&
+                                                        myckeditor.touched
+                                                    "
+                                 class="help-block">
+                                 {{ 'REQUIRED_FIELD' | translate }}
+                            </div>
+                          </div>
+                          <button
+                                  (click)="saveTemplate()"
+                                  [disabled]="myForm.invalid"
+                                  class="btn btn-primary float-right">
+                                  {{ 'SAVE' | translate }}
+                          </button>
+
+                          <button
+                                  (click)="resetContent()"
+                                  class="btn btn-primary float-right mr-2">
+                                  {{ 'RESET' | translate }}
+                          </button>
+                       
+                        
+                  <button
+                          mat-raised-button
+                          class="btn btn-primary float-right mr-2"
+                          (click)="onPreviewTemplate()">
+                          {{ 'PREVIEW_TEMPLATE' | translate }}
+                  </button>
+                        </form>
+                      </div>
+                    
+                    </div>
+                    <div class="row">
+                      <div class="col-xl-9">
+                        <hr class="d-block d-xl-none" />
+                        <div [innerHTML]="content"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              
+                  <div class="col-md-5 borderbox marglr">
+                    <h2 class="main-title mb-3 mb-xl-0">
+                      {{ 'SMS_TEMPLATES' | translate }}
+                    </h2>
+                    <div class="row">
+                      <div class="col-12">
+                    <mat-form-field appearance="outline">
+                      <mat-label>
+                        {{ 'SELECT_SMS_Template' | translate }}
+                      </mat-label>
+                      <mat-select
+                                  placeholder="Select SMS Template"
+                                  (selectionChange)="
+                                                    onSMSTemplateChange(
+                                                      selectedSMStemplate
+                                                    )
+                                                "
+                                  [(value)]="selectedSMStemplate">
+                        <mat-option
+                                    *ngFor="
+                                                        let template of smsTemplateTypes
+                                                    "
+                                    [value]="template.appKey">
+                          {{ template.appKey | translate}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                <div class="col-12">
+                  <div>
+
+                    <mat-form-field class="borderbox">
+                      <textarea
+                                id="linkMsg"
+                                matInput
+                                cdkTextareaAutosize
+                                #autosize="cdkTextareaAutosize"
+                                class="area-height"
+                                cdkAutosizeMinRows="6"
+                                cdkAutosizeMaxRows="4"
+                                [(ngModel)]="smsContent"></textarea>
+                    </mat-form-field>
+                  </div>
+                  <div class="guideEror">
+                    <spam *ngIf="!isSMSContentValid"> {{ 'GUIDE_CHANGES_WITH_NOT_ALLOWED' | translate }} </spam>
+                   </div>
+                
+                </div>
+                <div class="col-12 mt-5">
+                  <button
+                  (click)="resetSMSContent()"
+                  class="btn btn-primary float-right mr-2">
+                  {{ 'RESET' | translate }}
+          </button>
+                  <button
+                  (click)="saveSMSTemplate()"
+                  [disabled]="!isSMSContentValid"
+                  class="btn btn-primary float-right mr-2">
+                  {{ 'SAVE' | translate }}          </button>
+
+         
+                </div>
+                
+                </div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+  class="hidden"
+  id="previewBtn"
+  data-toggle="modal"
+  data-target="#previewModel">
+  {{ 'PREVIEW_TEMPLATE' | translate }}
+</button>
+
+  <div id="previewModel" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{ 'PREVIEW_TEMPLATE' | translate }}</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="previreBox" [innerHTML]="fullPreviewLayout | safehtml"></div>
+
+        </div>
+        <div class="modal-footer">
+          <button
+                  type="button btn-default"
+                  class="btn btn-default"
+                  data-dismiss="modal">
+                  {{ 'CLOSE' | translate }}
+          </button>
+        
+
+        </div>
+      </div>
+    </div>
+  </div>

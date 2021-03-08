@@ -1,0 +1,38 @@
+.cpointer {
+    cursor: pointer;
+  }
+  .tooltip-custom{
+    position: relative;
+    }
+    .tooltip-custom:before {
+      background: #1c4387;
+      border-radius: 2px;
+      color: #fff;
+      content: attr(data-title);
+      padding: 3px 10px;
+      top: 37px;
+      white-space: nowrap;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      display: none;
+      z-index: 99;
+    }
+  
+    .tooltip-custom:after{
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      opacity: 0;
+      display: none;
+      border-bottom: 7px solid #1c4387;
+      position: absolute;
+      content: "";
+      bottom: -13px;
+    }
+    .tooltip-custom:hover:before,
+    .tooltip-custom:hover:after {
+     opacity: 1;
+     display: block;
+    }
