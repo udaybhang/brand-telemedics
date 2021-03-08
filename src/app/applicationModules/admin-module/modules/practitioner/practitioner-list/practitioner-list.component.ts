@@ -19,7 +19,6 @@ import { CommonService } from "src/app/Services/common/common.service";
 import { globalConstanst } from "src/app/shared-module/global-constants/global-constants";
 import { LangChangeEvent, TranslateService } from "@ngx-translate/core";
 
-
 @Component({
   selector: "app-practitioner-list",
   templateUrl: "./practitioner-list.component.html",
@@ -48,7 +47,6 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
     "Status",
     "Id",
   ];
-
   constructor(
     private practitionerService: PractitionerService,
     private spinner: NgxSpinnerService,
@@ -65,7 +63,7 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
     if(clinicId) {
       this.clinicId = Number(clinicId);
     }
-    this.isClinicAdmin = this.commonService.isUserLoggedIn(3);
+    this.isClinicAdmin = this.commonService.isUserLoggedIn(3); //true
     this.getPractitionerList();
     this.translate.onLangChange
     .subscribe((event: LangChangeEvent) => {
@@ -80,7 +78,7 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
   singleSelect!: MatSelect;
   
   applyFilter(filterValue: any) {
-    if(filterValue){
+   if(filterValue){
    filterValue = filterValue.target.value.toLowerCase();
     if (this.PractitionerList.length > 0 && this.selectedClinic == 0) {
       this.PractitionerList = this.PractitionerList.filter((x:any) =>
@@ -102,6 +100,8 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
       this.dataSource = new MatTableDataSource(this.filterPractitionerList);
       this.dataSource.paginator = this.paginator;
     }
+
+    
   }
     else {
       this.getPractitionerList();
@@ -135,6 +135,7 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
       this.practitionerService
         .getAllPractitionerList()
         .subscribe((response: any) => {
+          console.log('response====', response);
           if (response != null && response.isSuccess) {
             this.PractitionerList = response.data;
             this.PractitionerList = this.PractitionerList.map((x:any) => {
@@ -149,6 +150,7 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
               }  else {
                 x.primarySpeciality = "";
               }
+              
               return x;
             });
             this.dataSource = new MatTableDataSource(this.PractitionerList);
@@ -209,11 +211,10 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
       this.paginator._intl.itemsPerPageLabel = this.translate.instant("ITEMS_PER_PAGE");
     }
    
-    this.dataSource.paginator =this.paginator;
-
+    this.dataSource._paginator =this.paginator;
       this.clinicsListSearch.map((x:any)=> { 
       if(x.id == 0) {x.name = this.translate.instant("ALL")}
-     return x;          
+           return x;          
      });
 
      this.clinicsList.map((x:any) => { 
