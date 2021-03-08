@@ -1,7 +1,6 @@
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
-
 import { AppRoutingModule} from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserModule, Title } from "@angular/platform-browser";
@@ -16,30 +15,14 @@ import { AuthInterceptor } from "./Services/auth/auth.interceptor";
 import { LoginContainerComponent } from './applicationModules/login-module/login-container.component';
 import { LoginComponent } from './applicationModules/login-module/login/login.component';
  import { NotFoundComponent } from './not-found/not-found.component';
-
-import { NgxMatMomentModule } from "@angular-material-components/moment-adapter";
-import {MatMenuModule} from '@angular/material/menu';
+import {DemoMaterialModule} from '../app/material-module';
+import { MAT_COLOR_FORMATS, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import {
-  NgxMatDatetimePickerModule,
-  NgxMatTimepickerModule,
-  NgxMatNativeDateModule,
-} from "@angular-material-components/datetime-picker";
-import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
-
-import {
-  MatMomentDateModule,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
 } from "@angular/material-moment-adapter";
-import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import { MatRadioModule } from "@angular/material/radio";
-import { MatSelectModule } from "@angular/material/select";
-import { MatCheckboxModule } from "@angular/material/checkbox";
 import { NgxMatDrpModule } from "ngx-mat-daterange-picker";
 import { NgSelectModule } from "@ng-select/ng-select";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { MatIconModule } from "@angular/material/icon";
 import { NgxCaptchaModule } from "ngx-captcha";
 import { DataExchangeService } from "./Services/data-exchange/data-exchange-service";
 import { EmbedVideo } from 'ngx-embed-video';
@@ -48,7 +31,6 @@ import { MomentModule } from 'angular2-moment';
 import { SetTimoutSignalService } from "./Services/data-exchange/set-timeout-signal";
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { MatTableModule } from '@angular/material/table'
 import { PractitionerContainerComponent } from "./applicationModules/admin-module/modules/practitioner/practitioner-container.component";
 import { PractitionerListComponent } from "./applicationModules/admin-module/modules/practitioner/practitioner-list/practitioner-list.component";
 import { SidebarComponent } from "./shared-module/sidebar/sidebar/sidebar.component";
@@ -69,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NotFoundComponent
   ],
   imports: [
-    
+     DemoMaterialModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -79,27 +61,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     BrowserAnimationsModule,
     NgxMatDrpModule,
-    MatTableModule,
-    MatMenuModule,
-    NgxMatColorPickerModule,
     //  NgxMatSelectSearchModule,
     //FileDropModule,
-    NgxMatMomentModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
     ToastrModule.forRoot(),
-    MatMomentDateModule,
-    MatButtonModule,
-    MatInputModule,
-    NgxMatNativeDateModule,
-    MatDatepickerModule,
     // CKEditorModule,
     NgSelectModule,
     NgbModule,
-    MatIconModule,
     NgxCaptchaModule,
     EmbedVideo.forRoot(),
     // NgIdleKeepaliveModule,
@@ -113,6 +80,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       defaultLanguage: 'en-US'
   })
   ],
+
   providers: [
     toogleSidebar,
     {

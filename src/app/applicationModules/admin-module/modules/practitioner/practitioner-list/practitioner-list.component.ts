@@ -80,9 +80,8 @@ export class PractitionerListComponent implements OnInit, OnDestroy {
   singleSelect!: MatSelect;
   
   applyFilter(filterValue: any) {
-    console.log('filterValue===', filterValue )
     if(filterValue){
-   filterValue = filterValue.toLowerCase();
+   filterValue = filterValue.target.value.toLowerCase();
     if (this.PractitionerList.length > 0 && this.selectedClinic == 0) {
       this.PractitionerList = this.PractitionerList.filter((x:any) =>
         x.user.fullName.toLowerCase().includes(filterValue) ||
