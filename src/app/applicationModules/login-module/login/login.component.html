@@ -6,11 +6,11 @@
           <div class="login-holder-content">
             <div class="row h-100 justify-content-center justify-content-lg-start align-items-lg-center">
               <div class="col-md-4 col-lg-3"></div>
-              <div class="col-md-8 col-lg-6">
+              <div class="col-md-8 col-lg-6 for-center-form">
                 <div class="row justify-content-lg-center">
                   <div class="col col-md-12 col-lg-10 col-xl-9">
-                    <div class="login-lf ml-lg-5 mt-5 mt-lg-0">
-                      <div class="logo-placement"   >
+                    <div class="login-lf">
+                      <div class="logo-placement text-center">
                         <figure> 
                           <img 
                             *ngIf="Isphoto"
@@ -26,15 +26,16 @@
                       
                       </div>
                       <div class="login-form-outer">
-                        <h1 class="welcome-title">Welcome</h1>
+                        <h3 class="welcome-title text-center">Pirates of HealthCare</h3>
                         <div class="login-form">
                           <form [formGroup]="loginForm">
                             <div class="form-group">
+                              <label for="email">Email</label>
                               <input type="email" class="form-control" id="UserName" name="UserName"
                                 formControlName="UserName" [ngClass]="{
                                   'is-invalid':
                                     loginSubmitted && loginfrm.UserName.errors
-                                }" placeholder="Email" />
+                                }" placeholder="Enter email id" />
                               <mat-error *ngIf="loginSubmitted && loginfrm.UserName.errors">
                                 <div *ngIf="loginfrm.UserName.errors?.required">
                                  Email is required
@@ -45,7 +46,8 @@
                               </mat-error>
                             </div>
                             <div class="form-group">
-                              <input class="form-control" type="password" placeholder="Password" id="Password"
+                              <label for="password">Password</label>
+                              <input class="form-control" type="password" placeholder="Enter password" id="Password"
                                 name="Password" formControlName="Password" [ngClass]="{
                                   'is-invalid':
                                     loginSubmitted && loginfrm.Password.errors
@@ -56,14 +58,15 @@
                                 </div>
                               </mat-error>
                             </div>
-                            <div class="d-flex justify-content-between mb-30">
-                              <a [routerLink]="['/forgotpassword']">Forgot Password?</a>
-                            </div>
+                            
                             <div class="mb-30">
-                              <button type="submit" (click)="Login()" class="btn btn-lg btn-icon btn-blue ">
-                                Log in
-                                <i><img src="../../../../assets/images/arrow-rit.svg" alt="->" /></i>
+                              <button type="submit" (click)="Login()" class="btn btn-lg btn-icon btn-blue sign_btn ">
+                                Sign In
+                                <!-- <i><img src="../../../../assets/images/arrow-rit.svg" alt="->" /></i> -->
                               </button>
+                            </div>
+                            <div class="justify-content-between for-g mb-30 text-center">
+                              <a [routerLink]="['/forgotpassword']" class="black">Forgot Password?</a>
                             </div>
                           </form>
                         </div>

@@ -30,20 +30,29 @@ font-size: 25px;
 font-weight: bold;
 margin-top: 16px;
 }
-.logo_login img{
+.logo-placement img{
     width: 114px;
     height: 60px;
 }
-.login_crd{
+
+.login-lf{
     background: #FFFFFF 0% 0% no-repeat padding-box;
 box-shadow: 0px 0px 32px #0000000A;
 border-radius: 8px;
+padding: 20px;
+}
+.welcome-title{
+    margin: 20px 0px;
 }
 .sign_btn{
     background: #22BAFF 0% 0% no-repeat padding-box;
     border-radius: 8px;
     border-color: #27b9fa;
     width: 100%;
+    color: #fff;
+}
+.for-center-form{
+    padding: 100px 0px;
 }
 .fomr_th{
     padding: 40px 20px;
