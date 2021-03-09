@@ -37,6 +37,8 @@ import { SidebarComponent } from "./shared-module/sidebar/sidebar/sidebar.compon
 import { HeaderComponent } from "./shared-module/header/header/header.component";
 import { toogleSidebar } from "./Services/toogle/toogle-service";
 import {SearchPipe} from '../app/applicationModules/admin-module/modules/practitioner/search.pipe';
+import { MeetingContainerComponent } from './applicationModules/admin-module/modules/meeting/meeting-container.component';
+import { AddMeetingComponent } from './applicationModules/admin-module/modules/meeting/add-meeting/add-meeting.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -50,7 +52,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     SidebarComponent,
     HeaderComponent,
     SearchPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    MeetingContainerComponent,
+    AddMeetingComponent
   ],
   imports: [
      DemoMaterialModule,
