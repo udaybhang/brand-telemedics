@@ -60,7 +60,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     this.navigationItems = [
       {
         name: "CLINIC_LIST",
-        icon: "hospital-o",
+        icon: "calendar-check-o",
         routerLink: "clinic",
         canAccessUserType: 1,
         sortOrder: 1,
@@ -68,7 +68,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "PRACTITIONER_LIST",
-        icon: "user-md",
+        icon: "fa-user-o",
         routerLink: "practitioner",
         canAccessUserType: 1,
         sortOrder: 1,
@@ -84,7 +84,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "PRACTITIONER_LIST",
-        icon: "user-md",
+        icon: "fa-user-o",
         routerLink: "practitioner",
         canAccessUserType: 3,
         sortOrder: 1,
@@ -92,7 +92,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "TELEVISIT_LIST",
-        icon: "list-alt",
+        icon: "fa-align-justify",
         routerLink: "meeting/list",
         canAccessUserType: 2,
         sortOrder: 1,
@@ -101,7 +101,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
      
       {
         name: "TELEVISIT_LIST",
-        icon: "list-alt",
+        icon: "fa-align-justify",
         routerLink: "meeting/list",
         canAccessUserType: 3,
         sortOrder: 2,
@@ -117,7 +117,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "REPORTS",
-        icon: "file-text-o",
+        icon: "fa-file-text-o",
         routerLink: "practitioner/visits-report",
         canAccessUserType: 2,
         sortOrder: 2,
@@ -125,7 +125,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "REPORTS",
-        icon: "file-text-o",
+        icon: "fa-file-text-o",
         routerLink: "practitioner/visits-report",
         canAccessUserType: 3,
         sortOrder: 4,
@@ -134,7 +134,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     
       {
         name: "CUSTOMIZATIONS",
-        icon: "tasks",
+        icon: "fa-sliders",
         routerLink: "practitioner/customizations",
         canAccessUserType: 2,
         sortOrder: 3,
@@ -142,7 +142,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "CUSTOMIZATIONS",
-        icon: "tasks",
+        icon: "fa-sliders",
         routerLink: "practitioner/customizations",
         canAccessUserType: 3,
         sortOrder: 5,
@@ -150,7 +150,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "SCHEDULER",
-        icon: "tasks",
+        icon: "fa-clock-o",
         routerLink: "practitioner/schedule",
         canAccessUserType: 2,
         sortOrder: 4,
@@ -158,7 +158,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "SCHEDULER",
-        icon: "tasks",
+        icon: "fa-clock-o",
         routerLink: "practitioner/schedule",
         canAccessUserType: 3,
         sortOrder: 6,
@@ -166,28 +166,38 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       },
       {
         name: "CONSENT_LIST",
-        icon: "list-alt",
+        icon: "fa-list-alt",
         routerLink: "consent/list",
         canAccessUserType: 3,
         sortOrder: 7,
         accessRoles:[]
       },    
       {
-        name: "SETTINGS",
-        icon: "list-alt",
-        routerLink: "clinic/editclinic",
-        canAccessUserType: 3,
-        sortOrder: 8,
-        accessRoles:[]
-      },      
-      {
         name: "AVAILABILITY",
-        icon: "hospital-o",
+        icon: "fa-calendar-check-o",
         routerLink: "clinicAdmin/availability",
         canAccessUserType: 3,
         sortOrder: 9,
         accessRoles:[]
-      }
+      },
+      {
+        name: "Clinic Users",
+        icon: "fa-user-circle-o",
+        routerLink: "clinicAdmin/availability",
+        canAccessUserType: 3,
+        sortOrder: 10,
+        accessRoles:[]
+      },
+      {
+        name: "SETTINGS",
+        icon: "fa-cog",
+        routerLink: "clinic/editclinic",
+        canAccessUserType: 3,
+        sortOrder: 11,
+        accessRoles:[]
+      } 
+     
+     
       
     ];
 
@@ -221,7 +231,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       });
       this.navigationItems.push({
         name: "SETTINGS",
-        icon: "cogs",
+        icon: "fa-cog",
         routerLink: "settings/clinicsettings",
         canAccessUserType: 1,
         sortOrder: 6,

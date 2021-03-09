@@ -20,7 +20,7 @@
     <!-- <h4 class="clinicname" *ngIf="loggedInUserData?.userType != 1">
       {{ clinicName }}
     </h4> -->
-    <div class="profile-info-rit ">
+    <div class="profile-info-rit img_wel ">
       <!-- <span *ngIf="timeZone" class="tZoneTxt">({{timeZone}})</span> -->
       <div class="admin_drop">
       <img src="../../../../assets/images/Image 2.png" class="admin_m">
@@ -31,7 +31,7 @@
       <!-- <div class="user-profile-img">
       <img src="{{baseUrl}}{{photopath}}" >
     </div> -->
-      <button mat-button [matMenuTriggerFor]="menu" class="top-user-menu">
+      <button mat-button [matMenuTriggerFor]="menu" class="top-user-menu dro_log">
         <!-- <div class="top-user" *ngIf="Isphoto">
           <img src="{{ baseUrl }}{{ photopath }}" alt="" />
         </div> -->
@@ -44,7 +44,7 @@
         </div>
       </button>
 
-      <mat-menu #menu="matMenu">
+      <mat-menu #menu="matMenu" class="mat_drop">
         <button *ngIf="isUserPractitioner" [routerLink]="['/practitioner/profile']" mat-menu-item >{{'PROFILE' | translate}}</button>
         <button mat-menu-item (click)="setLanguage('pt-BR')">Português</button>
         <button mat-menu-item (click)="setLanguage('en-US')">English</button>

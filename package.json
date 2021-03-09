@@ -34,6 +34,7 @@
     "angular2-flash-messages": "^3.0.1",
     "angular2-moment": "^1.9.0",
     "bootstrap": "^4.6.0",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "ngx-captcha": "^9.0.1",
     "ngx-embed-video": "^1.0.4",

@@ -20,7 +20,7 @@
         [routerLinkActiveOptions]="{ exact: false }"
       >
         <a class="js-show-child-nav" title="{{ item.name  | translate }}" mat-button>
-          <i class="fa fa-{{ item.icon }}"></i>
+          <i class="fa {{ item.icon }}"></i>
           <span class="nav-title">{{ item.name | translate}}</span>
         </a>
       </li>

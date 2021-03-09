@@ -83,3 +83,33 @@ border-color: #1ab3f8;
     top: 10px;
     left: 5px;
 }
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding: 10px;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #dee2e6;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.card.tab_crd{
+  border: 0;
+}
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 0;
+}
+tr.mat-header-row {
+  height: 40px;
+  background: #FAFBFD;
+}
+.active-td{
+  background: #2ec6893d 0% 0% no-repeat padding-box;
+    border-radius: 14px;
+    padding: 4px 16px;
+    text-align: center;
+}

@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="table-body-inner">
-          <div class="card">
+          <div class="card tab_crd">
             <div class="card-body">
               <div class="row">
                 <div *ngIf="!isClinicAdmin" class="col-md-5">
@@ -114,8 +114,8 @@
                     <th mat-header-cell *matHeaderCellDef mat-sort-header>
                       {{ 'STATUS' | translate }}
                     </th>
-                    <td mat-cell *matCellDef="let element" [ngStyle]="{'color': getPractitionerRandomColorStatus(element.isActive)}">
-                      {{ (element.isActive ? "ACTIVE" : "INACTIVE") | translate }}
+                    <td mat-cell *matCellDef="let element"  [ngStyle]="{'color': getPractitionerRandomColorStatus(element.isActive)}">
+                     <div class="active-td"> {{ (element.isActive ? "ACTIVE" : "INACTIVE") | translate }}</div>
                     </td>
                   </ng-container>
                   <ng-container matColumnDef="Id">

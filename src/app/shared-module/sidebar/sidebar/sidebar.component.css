@@ -62,10 +62,19 @@
 ul.an-main-nav {
   list-style: none;
   padding-left: 0;
+  /* transition: all .3s linear; */
+}
+ul.an-main-nav li .fa{
+  margin-right: 10px;
+  font-size: 19px;
+}
+ul.an-main-nav li span.nav-title {
+  font-weight: 400;
 }
 ul.an-main-nav li{
-  padding-left: 30px;
+  padding-left: 0px;
   margin: 10px 15px;
+  /* transition: all .3s linear; */
 }
 .an-nav-item:hover, .an-nav-item:hover a{
    border-radius: 12px;

@@ -1,5 +1,8 @@
-::ng-deep .mat-menu-panel {
+::ng-deep .mat-menu-panel.mat_drop {
     min-height: 45px!important;
+    margin-top: 10px;
+    margin-right: 20px;
+    min-width: 160px;
 }
 
 .tZoneTxt{
@@ -20,7 +23,10 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #F5F5F5;
 }
-
+.img_wel{
+    display: flex;
+    float: right;
+}
 .an-topbar-right-part{
     width: 100%;
     text-align: right;
@@ -32,5 +38,14 @@
 }
 .admin_drop{
     margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 0px;
   }
+  .dro_log{
+    padding-top: 13px;
+  }
+  .dro_log .mat-button-focus-overlay{
+    background: #fff;
+  }
+  .mat-button-focus-overlay {
+    background: #fff!important;
+}

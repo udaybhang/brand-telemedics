@@ -532,7 +532,7 @@ export class CommonService {
         let url = "";
         if (width >= 1200) {
           url = clinicTheme.patientBgImgLrg ? clinicTheme.patientBgImgLrg
-            : 'assets/images/4858794.jpg';
+            : 'assets/images/backgroundweb.png';
         }
         else if (width >= 768 && width < 1200) {
           
