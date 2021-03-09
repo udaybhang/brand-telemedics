@@ -36,6 +36,7 @@ import { PractitionerListComponent } from "./applicationModules/admin-module/mod
 import { SidebarComponent } from "./shared-module/sidebar/sidebar/sidebar.component";
 import { HeaderComponent } from "./shared-module/header/header/header.component";
 import { toogleSidebar } from "./Services/toogle/toogle-service";
+import {SearchPipe} from '../app/applicationModules/admin-module/modules/practitioner/search.pipe';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -48,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PractitionerListComponent,
     SidebarComponent,
     HeaderComponent,
+    SearchPipe,
     NotFoundComponent
   ],
   imports: [
